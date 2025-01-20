@@ -205,9 +205,10 @@ void LandWalkScene::Render(float elapsedTime)
 	rc.camera = &camera;
 	modelRenderer->Render(rc, stage.transform, stage.model.get(), ShaderId::Lambert);
 	modelRenderer->Render(rc, player.transform, player.model.get(), ShaderId::Lambert);
+
 	// HPゲージの描画位置とサイズを計算
-	float barWidth = 30.0f; // HPバーの幅
-	float barHeight = 5.0f; // HPバーの高さ
+	//float barWidth = 30.0f; // HPバーの幅
+	//float barHeight = 5.0f; // HPバーの高さ
 
 	// HPバーの描画
 	/*sprite->Render(dc,

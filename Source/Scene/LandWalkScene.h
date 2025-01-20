@@ -5,6 +5,7 @@
 #include "Camera.h"
 #include "FreeCameraController.h"
 #include "Model.h"
+#include "Sprite.h"
 
 class LandWalkScene : public Scene
 {
@@ -25,6 +26,7 @@ private:
 	struct Object
 	{
 		bool					onGround = false;
+		int						hp = 2000;
 		DirectX::XMFLOAT3		velocity = { 0, 0, 0 };
 		DirectX::XMFLOAT3		position = { 0, 0, 0 };
 		DirectX::XMFLOAT3		angle = { 0, 0, 0 };
@@ -45,7 +47,9 @@ private:
 	Camera								camera;
 	FreeCameraController				cameraController;
 	Object								player;
+	Object								player2;
 	Object								stage;
+	std::unique_ptr<Sprite>				sprite;
 	float								gravity = 10.0f;
 	float								acceleration = 30.0f;
 	float								deceleration = 20.0f;
